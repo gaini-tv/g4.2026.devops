@@ -22,7 +22,6 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      # TODO: lancer le lint
       - run: npm run lint 
 
   # test: ____ # TODO: lancer les tests, seulement si le lint a réussi
