@@ -24,7 +24,15 @@ jobs:
       - run: npm ci
       - run: npm run lint 
 
-  # test: ____ # TODO: lancer les tests, seulement si le lint a réussi
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
   # build:
   #   runs-on: ubuntu-latest
